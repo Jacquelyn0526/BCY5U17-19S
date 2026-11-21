@@ -1,0 +1,329 @@
+<!doctype html><html lang="zh-CN"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="theme-color" content="#164f73"><title>五年级华文｜第17—20课课后闯关</title><style>
+:root{--navy:#153a5a;--blue:#236e9d;--green:#217653;--gold:#ffcc60;--cream:#fff6df;--line:#dce8ed;--ink:#233e51}*{box-sizing:border-box}body{font-family:system-ui,'Microsoft YaHei','Noto Sans SC',sans-serif;background:#edf4f7;color:var(--ink);margin:0;font-size:18px;line-height:1.6}button,input,select{font:inherit}button{cursor:pointer;min-height:50px}.app{max-width:760px;margin:0 auto;background:#fff;min-height:100vh;box-shadow:0 5px 28px #12384f18}.hero{background:linear-gradient(122deg,#15476f,#287d91);color:white;padding:21px 18px 24px;border-bottom-left-radius:24px;border-bottom-right-radius:24px}.hero h1{font-size:clamp(26px,6vw,38px);margin:5px 0}.hero p{margin:0;font-size:15px;color:#e1f4f8}.badge{font-size:13px;display:inline-block;border-radius:99px;background:#ffffff30;padding:5px 11px}.view{display:none;padding:18px 15px 35px}.view.active{display:block}.card{border:1px solid var(--line);border-radius:17px;padding:16px;background:white;margin:0 0 12px;box-shadow:0 3px 13px #1b516b09}.form-row{margin:12px 0}.form-row label{display:block;font-size:16px;font-weight:800;margin-bottom:5px;color:#3b5c6f}input,select{width:100%;min-height:53px;border-radius:10px;padding:11px 12px;background:#fff;border:2px solid #cfdfe8;color:var(--ink)}h2{font-size:25px;line-height:1.3;color:var(--navy);margin:8px 0 13px}h3{margin:0 0 6px;color:var(--navy);font-size:21px}.muted{font-size:15px;color:#647f90}.btn{border:0;border-radius:12px;padding:10px 17px;background:#246c9e;color:white;font-weight:900}.btn:disabled{opacity:.5;cursor:not-allowed}.btn.gold{background:#ffd77f;color:#5e4507}.btn.soft{background:#e8f4fc;color:#215779}.btn.green{background:#1b7b57}.full{width:100%}.lessons{display:grid;gap:10px}.lesson{border:2px solid #d8e5ee;background:#fafdff;border-radius:14px;padding:14px;display:block;text-align:left}.lesson h3{font-size:20px;margin:0}.lesson p{margin:4px 0;color:#54728a;font-size:15px}.lesson .status{display:block;font-size:14px;font-weight:800;color:#268364}.lesson.done{border-color:#a8d8be;background:#f2fbf5}.intro{background:#eaf7f3;border-left:5px solid #41a381;padding:13px 15px;border-radius:11px;margin-bottom:12px}.progress{height:10px;background:#e6eef2;border-radius:10px;margin:12px 0 19px;overflow:hidden}.bar{height:100%;background:#2e9d78;width:0;transition:width .25s}.qnum{color:#527a94;font-size:16px;font-weight:800}.question{font-size:clamp(23px,5.5vw,31px);font-weight:950;color:var(--navy);line-height:1.4;margin:15px 0}.opts{display:grid;gap:10px}.opt{border:2px solid #d7e4ea;background:#fff;text-align:left;padding:14px;border-radius:13px;font-size:21px;font-weight:850;min-height:65px}.opt.good{border-color:#21905b;background:#e6f7ec}.opt.bad{border-color:#d67d66;background:#fff0ea}.hint{background:#fff6dd;padding:12px 13px;border-radius:11px;font-size:16px;margin:12px 0}.feedback{margin:12px 0;background:#eff7ee;border-radius:11px;padding:13px 14px;font-weight:800;font-size:18px}.row{display:flex;gap:9px;flex-wrap:wrap;align-items:center}.row>*{flex:1}.hidden{display:none!important}.bigscore{font-size:clamp(45px,12vw,65px);font-weight:1000;color:var(--green);margin:9px 0;line-height:1.1}.circle{font-size:56px}.info{background:#edf5fb;padding:13px;border-radius:12px;margin:12px 0;font-size:15px}.meta{display:flex;justify-content:space-between;gap:8px;font-size:14px;color:#537287}.records{display:grid;gap:7px}.record{background:#f5fafc;border-radius:10px;padding:10px 12px;font-size:14px}.chip{display:inline-block;background:#e6f2fa;color:#245e83;border-radius:99px;padding:4px 10px;font-size:14px;font-weight:850;margin:3px}.foot{text-align:center;color:#79919e;font-size:12px;padding:20px}.nav{display:flex;justify-content:space-between;align-items:center;margin-bottom:12px}.small{font-size:14px}.warning{color:#9c4e2a;font-size:14px}.pill{font-size:14px;font-weight:850;background:#e7f4ee;color:#19714c;padding:5px 9px;border-radius:99px}@media(min-width:600px){.view{padding:25px 30px 45px}.hero{padding:27px 30px}.lessons{grid-template-columns:1fr 1fr}}@media(max-width:390px){.question{font-size:24px}.opt{font-size:19px}}
+
+/* 课本原文随题查阅（电脑并排、手机抽屉） */
+.app:has(#quiz.active){max-width:1250px}
+.quiz-workspace{display:grid;grid-template-columns:minmax(0,.98fr) minmax(0,1fr);gap:18px;align-items:start}
+.quiz-question{min-width:0}
+.source-reader{background:#f7fbff;border:2px solid #b8dae9;border-radius:17px;padding:14px;position:sticky;top:12px;max-height:calc(100dvh - 24px);overflow-y:auto;overscroll-behavior:contain}
+.source-head{display:flex;gap:10px;align-items:center;justify-content:space-between}
+.source-head h3{margin:0;color:#155377;font-size:20px}
+.source-close{display:none;border:0;background:#e7f1f8;color:#174b66;border-radius:12px;font-weight:900;min-width:45px;min-height:45px}
+.source-sub{font-size:14px;color:#456c82;margin:6px 0 10px}
+.source-tabs{display:flex;flex-wrap:wrap;gap:6px;margin:8px 0}
+.source-tabs button{font-size:14px;border:1px solid #adcfde;border-radius:10px;background:#fff;color:#225572;padding:6px 9px;min-height:42px;font-weight:800}
+.source-tabs button[aria-pressed=true]{background:#1f658a;border-color:#1f658a;color:white}
+.source-sheet{border:1px solid #d7e6ed;border-radius:13px;background:#fff;padding:7px}
+.source-sheet img{width:100%;height:auto;display:block;object-fit:contain;border-radius:8px;background:#fff}
+.source-navigation{display:grid;grid-template-columns:1fr 1.2fr 1fr;gap:7px;align-items:center;margin:10px 0}
+.source-navigation button{border:0;border-radius:10px;background:#e4f2f9;color:#165577;min-height:45px;font-size:16px;font-weight:850}
+.source-navigation button:disabled{opacity:.4}
+.source-navigation span{text-align:center;font-size:14px;color:#35677f;font-weight:850}
+.source-zoom{display:block;text-align:center;text-decoration:none;background:#e8f3df;color:#1e6547;padding:11px;border-radius:10px;min-height:46px;font-size:16px;font-weight:850}
+.source-notice{font-size:13px;color:#58768a;line-height:1.45;margin:10px 0 0}
+.reading-launch{display:none;width:100%;background:#1c7692;color:white;border:0;border-radius:13px;font-weight:900;padding:10px;margin:0 0 12px;box-shadow:0 3px 10px #16587324}
+.reader-shade{display:none}
+.source-sheet img:focus{outline:3px solid #287b97}
+@media(max-width:900px){
+ .app:has(#quiz.active){max-width:760px}
+ .quiz-workspace{display:block}
+ .reading-launch{display:block;position:sticky;top:0;z-index:20}
+ .source-reader{display:none;position:fixed;left:0;right:0;bottom:0;top:auto;z-index:1002;border-radius:22px 22px 0 0;max-height:min(79dvh,850px);padding:17px 12px 25px;box-shadow:0 -12px 36px #102c4a66;overflow:auto;background:#f8fcff}
+ .source-reader.open{display:block}
+ .source-close{display:block}
+ .reader-shade.open{display:block;position:fixed;inset:0;background:#10273d70;z-index:1001}
+ .source-head h3{font-size:21px}
+ .source-sheet img{max-width:650px;margin:auto}
+ .source-zoom{font-size:18px}
+}
+@media(max-width:440px){.source-navigation{grid-template-columns:1fr 1fr 1fr}.source-tabs button{font-size:13px;padding:5px 7px}}
+
+/* 教师试用区：正式成绩和试用成绩严格分离 */
+.teacher-tools{margin-top:13px;border:1px dashed #9dc2d4;border-radius:13px;background:#f7fbfe;padding:12px}
+.teacher-tools summary{cursor:pointer;font-weight:850;color:#255b79;min-height:48px;padding:9px 5px}
+.teacher-tools p{font-size:15px;margin:8px 0;color:#456478}
+.teacher-tools .row{display:flex;gap:8px;flex-wrap:wrap}
+.teacher-tools .row button{flex:1 1 180px}
+.btn.danger{background:#fff1ee;color:#9d3027;border:1px solid #edb8b0;font-weight:850}
+.btn.trial{background:#f8dba2;color:#563e16;border:1px solid #dfb05c}
+.mode-banner{border-radius:12px;padding:10px 14px;margin:12px 0;font-size:17px;font-weight:850;background:#fff2d1;color:#714b0c}
+.mode-banner.hidden{display:none}
+.teacher-tools .smallprint{font-size:13px;color:#6b7280}
+
+/* 成绩传送状态和一键本机重置 */
+.record-tools{margin-top:12px;padding:12px;background:#f4f9fc;border:1px solid #c9dfe9;border-radius:13px}
+.record-tools h4{margin:0 0 6px;font-size:17px;color:#245473}
+.record-tools p{font-size:14px;margin:5px 0 10px;color:#496d80}
+.record-tools .row{display:flex;gap:8px;flex-wrap:wrap}
+.record-tools .row button{flex:1 1 190px}
+.sync-label{font-weight:850;color:#805816}
+.sync-label.ok{color:#217653}
+.sync-label.warn{color:#b34731}
+.sync-label.trial{color:#365f81}
+#syncHealth{margin:8px 0 5px;font-size:15px;font-weight:750;color:#45667b}
+</style></head><body><div class="app"><div class="hero"><span class="badge">2026 · 五年级华文 · 课后自习 · 收分修复版 v3</span><h1>🧭 四课闯关乐园</h1><p>第17—20课｜先读原文 · 再答题 · 即时反馈 · 自动提交成绩</p></div><div class="view active" id="start"><h2>👋 开始前先登记</h2><div class="card"><div class="form-row"><label for="name">学生姓名 Nama murid</label><input id="name" placeholder="例：李小明 / Aiman" maxlength="36" autocomplete="name" required></div><div class="form-row"><label for="className">班级 Kelas</label><input id="className" placeholder="例：5H / 5L" maxlength="16" required></div><div class="form-row"><label for="level">练习难度 Tahap</label><select id="level"><option value="C">C组 · 基础（每题2选项＋提示）</option><option value="B" selected>B组 · 巩固（每题3选项＋提示）</option><option value="A">A组 · 挑战（每题4选项）</option></select></div><button class="btn green full" onclick="saveProfile()">进入课文乐园 →</button><p class="muted">不会要求家长截图。交卷将自动上传；只有服务器回执验证成功才显示「已确认收到」。若显示「未确认」，请在记录区检查连接并重试。</p></div></div><div class="view" id="home"><div class="nav"><button class="btn soft" onclick="show('start')">✎ 修改资料</button><span class="pill" id="welcome"></span></div><h2>请选择本次作业</h2><p class="muted">跟着课堂顺序完成第1—9堂的小测。每道题都有📖「查看原文」，没有课本也能边读边答。</p><div class="lessons" id="lessonlist"></div><div class="card" style="margin-top:13px"><h3>📊 我的练习记录</h3><div id="records" class="records"></div><div class="row" style="margin-top:12px"><button id="retryPendingBtn" class="btn soft" onclick="retryPending()">🔄 核对并重发未确认成绩</button><button class="btn soft" onclick="checkConnection()">🔎 检查成绩表连接</button></div><p id="syncHealth" role="status">只有服务器确认收件后，才会显示「已确认收到」。</p><p id="queueStatus" class="muted"></p>
+<div class="record-tools"><h4>🧹 本机记录重置</h4><p>旧试用成绩还显示在这里？点击下方按钮清除当前姓名与班级在<strong>本设备</strong>的旧记录，确认后可重新作答。不会删除教师 Google Sheets 中的任何记录。<strong>如需补交旧成绩，请先点击上方「核对并重发」。</strong></p><div class="row"><button type="button" class="btn danger" onclick="clearOfficialLocalRecords()">🗑️ 清除当前姓名的本机旧记录</button></div></div></div>
+<div id="modeBanner" class="mode-banner hidden" role="status">🧪 教师试用模式：本次练习只保存在此设备，不发送 Google Sheets。</div>
+<details class="teacher-tools" id="teacherTools" hidden><summary>⚙️ 教师试用与记录重置</summary>
+<p>教师可先开启试用模式检查全部关卡，不影响学生正式成绩；试用完成后可以一键清空记录，再试一次。</p>
+<div class="row"><button type="button" id="trialToggle" class="btn trial" onclick="toggleTrialMode()">🧪 开启试用模式（不上传）</button><button type="button" class="btn danger" onclick="clearTrialRecords()">清空本机试用记录</button></div>
+<p id="trialCount" class="smallprint">本机试用记录：0笔</p>
+<hr style="border:0;border-top:1px solid #c9dce8;margin:14px 0">
+<p>旧版试用时如果用正式模式交卷，记录可能已经写入正式区。下面按钮<strong>仅清除当前姓名＋班级在本设备的正式记录</strong>，不会删除别人的本机记录或云端成绩。</p>
+<div class="row"><button type="button" class="btn danger" onclick="clearOfficialLocalRecords()">清除本机当前身份的旧记录</button></div>
+<p class="smallprint">⚠ 清除本机记录无法撤回，也不会删除已上传至 Google Sheets 的测试成绩；云端测试行须由教师在表格中另外删除。</p>
+</details></div><div class="view" id="quiz"><div class="nav"><button class="btn soft" onclick="show('home')">← 返回目录</button><span class="pill" id="lessonNum"></span></div><div class="intro"><b id="lessonTitle"></b><div class="small" id="theme"></div></div><div class="meta"><span id="progressLabel"></span><span id="correctLabel"></span></div><div class="progress"><div class="bar" id="bar"></div></div><button class="reading-launch" id="readBtn" onclick="openReader()" aria-haspopup="dialog">📖 查看课文原文（可随时参考）</button><div class="quiz-workspace"><aside id="sourceReader" class="source-reader" role="region" aria-label="课本原文阅读区"><div class="source-head"><h3>📖 课文原文</h3><button class="source-close" onclick="closeReader()" aria-label="关闭原文">✕</button></div><p class="source-sub">参考上载课本原文，不用另外找课本。</p><div id="sourceTabs" class="source-tabs"></div><div class="source-navigation"><button id="sourcePrev" onclick="moveSource(-1)">← 上一页</button><span id="sourcePageCount">1 / 1 页</span><button id="sourceNext" onclick="moveSource(1)">下一页 →</button></div><figure class="source-sheet" style="margin:0"><img id="sourceImage" src="" alt="课文原文图片" loading="lazy" decoding="async"></figure><div style="margin-top:9px"><a class="source-zoom" id="sourceZoom" href="#" target="_blank" rel="noopener">🔍 点击放大原图阅读</a></div><p class="source-notice" id="sourceTip">可切换页面查找答案。点击放大可用手指双指缩放。</p></aside><div class="card quiz-question"><div class="qnum" id="qnum"></div><div class="question" id="qtext"></div><button class="btn soft" onclick="speakQuestion()">🔊 听老师读题</button><div class="hint" id="hint"></div><div class="opts" id="opts"></div><div id="feedback" class="feedback hidden"></div><button id="next" class="btn green full hidden" onclick="nextQuestion()">下一题 →</button></div></div><div id="readerShade" class="reader-shade" onclick="closeReader()"></div></div><div class="view" id="finish"><div class="card" style="text-align:center"><div class="circle">🏅</div><h2>这一关完成了！</h2><div class="bigscore" id="bigscore"></div><p id="scoreline"></p><div class="info" id="submitStatus"></div><div class="row"><button class="btn green" onclick="show('home');renderLessons()">返回任务目录</button><button class="btn gold" onclick="replay()">再挑战一次</button></div></div><p class="muted">选择题分数是课堂阅读与词语的辅助评估；朗读、口述与手写由教师在课堂另外观察。</p></div><div class="foot">五年级华文 · 第17—20课　|　教师班级巩固专用</div></div><script>
+// ★ 教师只需将下面双引号里的文字换成自己部署的 Google Apps Script /exec 网址；家长和学生无需设置。
+const WEB_APP_URL = "https://script.google.com/macros/s/AKfycbx8vfkVfQJwMarywbe6BBmcaWoy_aMw6GYcXfu3Wtg2icm-KTesocHRxHkJzQs8_u8u/exec";
+const LESSONS=[{"num":1,"title":"第17课 · 成长与幸福","target":"朗读诗歌，理解成长"},{"num":2,"title":"第17课 · 思念与亲情","target":"比较两首诗，表达思念"},{"num":3,"title":"第18课 · 棋盘与麦粒","target":"读懂故事开端"},{"num":4,"title":"第18课 · 倍增的智慧","target":"理解倍增与故事启示"},{"num":5,"title":"第19课 · 大阪城与巨石","target":"了解人物与困难"},{"num":6,"title":"第19课 · 浮力与逆向思考","target":"掌握解决方法和启示"},{"num":7,"title":"第20课 · 伍连德抗疫","target":"理解抗疫故事与措施"},{"num":8,"title":"第20课 · 抗疫英雄的精神","target":"表达人物精神"},{"num":9,"title":"第17—20课 · 综合闯关","target":"综合巩固四课"}];
+const ALL={"1":[["诗中的孩子走在什么里面？","时间","大海","城堡","棋盘","看课文标题“走在……里的孩子”。","Kanak-kanak dalam perjalanan masa"],["诗中的“种子”在土壤里做什么？","生根发芽","沉入海底","修建城墙","搬运麦子","种子有了阳光与雨露会成长。","Biji benih mula bercambah"],["孩子越来越灵活，手脚越来越怎样？","有力","无力","寒冷","透明","诗的第一段描述了孩子的成长。","Tangan dan kaki semakin kuat"],["“汲取”的意思是什么？","吸收","丢掉","阻止","躲避","想想植物汲取阳光和雨露。","Menyerap"],["“萌发”最接近哪种意思？","开始生长","马上结束","坚硬如石","停止活动","小种子萌发新芽。","Mula tumbuh"],["诗中和春天有关的是？","春意","瘟疫","麦粒","城墙","春天万物生机勃勃。","Suasana musim bunga"],["这首诗的主要主题是？","成长与希望","军事防御","粮食计算","防治鼠疫","想想孩子和种子的变化。","Pertumbuhan dan harapan"],["读完这首诗，我们更应该？","珍惜成长","害怕学习","不关心别人","拒绝尝试","课文借孩子成长给我们启发。","Menghargai proses membesar"]],"2":[["《展开思念的翅膀》描写作者想念谁？","家人","国王","工匠","商人","诗中有“爹爹、娘、您”等称呼。","Merindui keluarga"],["诗中“清粥”的味道让人想到什么？","家的温暖","比赛的胜利","城墙的坚硬","海浪的声音","回想家人准备食物的画面。","Kehangatan rumah"],["“叮咛”的意思是？","亲切地反复嘱咐","不断抱怨","大声嘲笑","忘记事情","长辈常叮咛孩子注意安全。","Pesanan penuh kasih"],["诗中“柴火”主要用于什么？","煮食取暖","建桥","造棋盘","装巨石","联系炉火与煮粥的画面。","Kayu api untuk memasak"],["“思念”的意思是？","想念","责怪","竞争","忘记","思念远方的人。","Rindu"],["第一首诗更强调什么？","孩子成长","巨大城墙","智慧游戏","鼠疫研究","第一首有种子、阳光与雨露。","Pertumbuhan kanak-kanak"],["第二首诗更强调什么？","家人的关爱","数学公式","军事防御","交通问题","第二首回忆家人煮饭的生活。","Kasih sayang keluarga"],["哪一句最能表达幸福？","我感谢家人的照顾","我只顾自己","我不要学习","我嘲笑别人","选出懂得珍惜关爱的句子。","Berterima kasih kepada keluarga"]],"3":[["谁发明了故事中的棋？","锡塔","国王","伍连德","丰臣秀吉","文中写古印度的大臣发明象棋。","Sita mereka cipta catur"],["国王为什么要赏赐锡塔？","因为他发明了一种棋","因为他运走巨石","因为他治好鼠疫","因为他修了城墙","看故事的开头。","Hadiah kerana mencipta catur"],["第一格放多少粒麦子？","1粒","2粒","4粒","8粒","锡塔从一粒开始。","Satu biji gandum"],["第二格放多少粒麦子？","2粒","1粒","8粒","16粒","每格是前一格的两倍。","Dua biji gandum"],["第三格放多少粒麦子？","4粒","3粒","6粒","12粒","1、2、4……","Empat biji gandum"],["每一格的麦粒数怎样变化？","变成前一格的两倍","增加一粒","减少一粒","不改变","注意“倍增”。","Berganda dua kali"],["“赏赐”指什么？","给予奖赏","进行隔离","运送货物","不断思念","国王要奖励大臣。","Memberikan ganjaran"],["国王起初觉得要求怎样？","简单","困难极了","十分危险","非常秘密","国王听了哈哈大笑。","Raja menganggapnya mudah"]],"4":[["第四格要放几粒麦子？","8粒","4粒","16粒","32粒","从1、2、4继续翻倍。","Lapan biji gandum"],["第五格要放几粒麦子？","16粒","5粒","32粒","64粒","第四格为8粒，再乘2。","Enam belas biji"],["第六格要放几粒麦子？","32粒","12粒","64粒","128粒","每次乘2。","Tiga puluh dua biji"],["第八格要放几粒麦子？","128粒","64粒","256粒","512粒","第五格16，第六格32，第七格64。","Seratus dua puluh lapan"],["国王为什么后来很着急？","麦粒需求巨大","棋盘损坏","大臣离开","出现大火","每格倍增会很快变多。","Jumlah gandum terlalu besar"],["“庞大”是什么意思？","非常巨大","非常微小","非常安静","非常缓慢","庞大的数目不是小数目。","Sangat besar"],["锡塔展现了怎样的智慧？","懂得倍增的力量","喜欢随意放弃","不会计算","只重外表","看似小要求，其实数目惊人。","Memahami kuasa gandaan"],["故事给我们的启示是？","不要轻视小变化的积累","做事不用思考","只相信表面","永远不计算","微小的变化可以累积成为大结果。","Jangan pandang ringan perubahan kecil"]],"5":[["《巨石载船》故事发生在哪座日本城市？","大阪","东京","京都","名古屋","课文开头介绍大阪城。","Osaka"],["谁下令修建大阪城？","丰臣秀吉","伍连德","锡塔","国王","文中出现1583年与丰臣秀吉。","Toyotomi Hideyoshi"],["当时城墙需要大量什么材料？","巨石","麦粒","口罩","清粥","城墙的基础由巨石建造。","Batu besar"],["大石块主要来自哪里？","偏僻海岛","国王粮仓","河流上游","医院","看课文介绍稀有石材。","Pulau terpencil"],["工匠第一次把石头放在哪里？","木船上","飞机里","书本里","铁轨上","他们尝试用船运输。","Di atas perahu kayu"],["第一次搬运为什么失败？","船沉入水里","石头自己飞走","棋盘坏了","没有麦子","巨石太重，小船难以承受。","Perahu tenggelam"],["“抵御”的意思是？","防御","赞美","想念","观察","筑城是为了抵御敌人。","Menangkis / mempertahankan"],["“巨石”是怎样的石头？","非常大的石头","非常小的沙子","一粒麦子","一件衣服","“巨”表示大。","Batu yang sangat besar"]],"6":[["工匠最后把巨石放在哪里？","船底","船顶","树上","车里","原文说他们把巨石捆在船底。","Di bawah perahu"],["巨石完全浸在水中会受到什么力？","浮力","磁力使石头消失","风力","摩擦产生的光","水对浸入物体有浮力。","Daya apungan"],["船要能浮起，需要浮力与什么达到平衡？","总重量","颜色","长度","名字","想想船的重量与水提供的浮力。","Jumlah berat"],["故事中的新方法体现了？","逆向思考","不肯改变","盲目模仿","放弃解决","原来石头放在船上，后来放在船底。","Pemikiran songsang"],["“平衡”的意思是？","两边相称稳定","不断倾斜","立刻失败","数量越来越多","浮力与重量达到平衡。","Seimbang"],["哪一做法更符合课文？","将巨石捆在船底利用浮力","继续用同样小船硬搬","把石头变成麦粒","完全不搬运","对照故事最后成功的方法。","Ikat batu di bawah perahu"],["遇到难题时应怎样做？","尝试换角度思考","马上放弃","责怪同伴","不听建议","课文的课后精华强调换角度。","Cuba sudut pemikiran lain"],["为什么巨石在水中能得到帮助？","水会向上提供浮力","巨石变轻为零","水把石头吞掉","石头会飞","水中有浮力，注意这不等于重力消失。","Air memberikan daya ke atas"]],"7":[["《勇于抗战的斗士》的主人公是？","伍连德","锡塔","丰臣秀吉","国王","他是抗击鼠疫的医生。","Dr Wu Lien-teh"],["故事开头的疫情发生于哪一年？","1910年","1583年","2012年","2026年","课文开头是1910年冬天。","Tahun 1910"],["疫情发生在中国什么地区？","东北","西南","中部","东南沿海","课文开头指出东北。","Timur laut China"],["伍连德发现鼠疫病菌主要经什么方式感染？","呼吸","吃麦子","看棋盘","游泳","课文说他揭露了肺鼠疫经呼吸感染。","Melalui pernafasan"],["伍连德要求接触者采取什么措施？","隔离","自由聚会","不断外出","忽略症状","隔离可减少交叉感染。","Pengasingan"],["课文中口罩主要帮助什么？","降低感染风险","增加麦粒","修建城墙","改变石头重量","口罩用于呼吸道传播防护。","Topeng muka mengurangkan risiko"],["“揭露”最接近什么？","发现并说明真相","故意隐瞒","马上忘记","随意猜想","科学研究需要找出真相。","Mendedahkan kebenaran"],["防疫措施的目的是？","阻止交叉感染","让病毒传播更快","减少学习","增加贸易","隔离和口罩都是为了减少传播。","Mencegah jangkitan silang"]],"8":[["伍连德面对困难时怎样做？","坚持抗疫与研究","立刻放弃","隐瞒真相","停止帮助人","他坚持调查并实施措施。","Terus berusaha dan menyelidik"],["课文中哪个成语形容伍连德？","坚持不拔","守株待兔","画蛇添足","自相矛盾","课后精华谈到毅力与坚持。","Gigih dan tidak berputus asa"],["春节前后伍连德用什么方式鼓励人们？","燃放鞭炮","放风筝","赠送麦粒","举行棋赛","课文写春节鞭炮与疫情减缓。","Membakar mercun sempena perayaan"],["1917年伍连德又参与什么工作？","防治鼠疫","修筑大阪城","发明象棋","采集巨石","他继续处理山西鼠疫。","Membanteras wabak pada 1917"],["伍连德的科学态度是？","调查证据再采取行动","完全凭猜测","不听数据","一遇困难就走","看他如何找出传染途径。","Keputusan berdasarkan bukti"],["2012年课文提到什么纪念方式？","成立纪念馆","修棋盘","兴建大阪城","举办搬石比赛","课文尾段介绍槟城纪念馆。","Muzium peringatan di Pulau Pinang"],["“伟大”在文中用来形容什么？","伍连德的贡献","一块麦粒","普通的火柴","一支铅笔","人们赞赏他守护生命。","Sumbangan yang hebat"],["伍连德的故事给我们的启示是？","科学求证并坚持到底","轻视别人","不愿合作","怕困难就放弃","结合他的调查和抗疫行动。","Bersikap saintifik dan tabah"]],"9":[["哪篇课文谈到成长与亲情？","《永不磨灭的幸福》","《棋盘里的智慧》","《巨石载船》","《勇于抗战的斗士》","想想诗歌中的种子和家人。","Puisi tentang kasih sayang"],["哪篇课文谈到每格倍增？","《棋盘里的智慧》","《巨石载船》","《永不磨灭的幸福》","《勇于抗战的斗士》","故事中有64格棋盘。","Papan catur dan gandaan"],["哪篇课文与浮力有关？","《巨石载船》","《棋盘里的智慧》","《永不磨灭的幸福》","《勇于抗战的斗士》","石头沉入水中受到浮力。","Batu dan daya apungan"],["哪篇课文描写抗疫医生？","《勇于抗战的斗士》","《棋盘里的智慧》","《永不磨灭的幸福》","《巨石载船》","主要人物是伍连德。","Doktor membanteras wabak"],["“汲取”最接近？","吸收","放弃","离开","毁坏","植物汲取养分。","Menyerap"],["第四格的麦粒数量是？","8粒","4粒","12粒","32粒","1、2、4、8。","Lapan biji"],["巨石放船底成功主要运用了？","水的浮力","倍增","口罩","思念","水对沉入物体提供向上的浮力。","Daya apungan"],["伍连德发现的传播途径是？","呼吸","观看文字","搬运巨石","吃麦粒","课文提到肺鼠疫的呼吸感染。","Pernafasan"],["面对难题，学《巨石载船》应该？","转换角度思考","一直用旧方法","只顾责怪","放弃努力","课文强调逆向思考。","Fikir secara berbeza"],["学《棋盘里的智慧》应该警惕什么？","微小变化累积的力量","永远只看表面","不用考虑数字","什么也不做","每格翻倍会很快增长。","Kuasa pertambahan berlipat ganda"],["两首诗最适合用哪个词总结？","幸福","战斗","浮力","赏赐","有关成长和家人的温暖。","Kebahagiaan"],["最符合伍连德精神的是？","坚持不拔","敷衍了事","傲慢自大","不求甚解","他坚持调查防疫。","Tabah dan berusaha"]]};
+
+// 原文图片全部来自用户提供的五年级华文课本扫描图；精确按文章顺序排列。
+const SOURCE_INFO={
+ 17:{title:'17 永不磨灭的幸福',pages:[['texts/u17_01.webp','（一）走在时间里的孩子 · 开篇'],['texts/u17_02.webp','（一）走在时间里的孩子 · 续篇'],['texts/u17_03.webp','（二）展开思念的翅膀 · 开篇'],['texts/u17_04.webp','（二）展开思念的翅膀 · 续篇']]},
+ 18:{title:'18 棋盘里的智慧',pages:[['texts/u18_01.webp','棋盘里的智慧 · 故事开端'],['texts/u18_02.webp','棋盘里的智慧 · 麦粒倍增'],['texts/u18_03.webp','棋盘里的智慧 · 国王的变化'],['texts/u18_04.webp','棋盘里的智慧 · 故事结尾']]},
+ 19:{title:'19 巨石载船',pages:[['texts/u19_01.webp','巨石载船 · 大阪城'],['texts/u19_02.webp','巨石载船 · 搬运困难'],['texts/u19_03.webp','巨石载船 · 解决办法'],['texts/u19_04.webp','巨石载船 · 结果与启示']]},
+ 20:{title:'20 勇于抗战的斗士',pages:[['texts/u20_01.webp','勇于抗战的斗士 · 1910年的疫情'],['texts/u20_02.webp','勇于抗战的斗士 · 研究与防疫措施'],['texts/u20_03.webp','勇于抗战的斗士 · 坚持抗疫']]}
+};
+let sourceUnit=17, sourceIndex=0;
+function initialUnit(t){return t<=2?17:t<=4?18:t<=6?19:20}
+function unitForQuestion(){
+ if(task!==9)return initialUnit(task);
+ // 综合复习按原题序号跳到相应的课文，而非随机题序。
+ const mapping=[17,18,19,20,17,18,19,20,19,18,17,20];
+ return mapping[bank[idx].i]||17;
+}
+function sourcePages(){
+ let pages=SOURCE_INFO[sourceUnit].pages;
+ if(task===1) return pages.slice(0,2);
+ return pages;
+}
+function setSourceUnit(unit){
+ if(sourceUnit!==unit){sourceUnit=unit;sourceIndex=0}
+ renderSource();
+}
+function renderSource(){
+ const tabs=$('sourceTabs');if(!tabs)return;
+ const units=task===9?[17,18,19,20]:[initialUnit(task)];
+ tabs.innerHTML=units.map(u=>`<button type="button" aria-pressed="${sourceUnit===u}" onclick="setSourceUnit(${u})">${SOURCE_INFO[u].title}</button>`).join('');
+ const pages=sourcePages();sourceIndex=Math.min(Math.max(sourceIndex,0),pages.length-1);
+ const [src,title]=pages[sourceIndex];
+ const picture=$('sourceImage');
+ if(picture.getAttribute('src')!==src)picture.setAttribute('src',src);
+ picture.alt=title+'（课本原图）';
+ $('sourcePageCount').textContent=(sourceIndex+1)+' / '+pages.length+' 页';
+ $('sourceZoom').href=src;
+ $('sourceZoom').setAttribute('aria-label','在新页面放大'+title);
+ $('sourcePrev').disabled=sourceIndex===0;
+ $('sourceNext').disabled=sourceIndex===pages.length-1;
+ $('sourceTip').textContent=title+'。请根据文章内容寻找答案；点“放大原图”可以更清楚地阅读。';
+}
+function moveSource(delta){sourceIndex+=delta;renderSource();let reader=$('sourceReader');if(window.matchMedia('(max-width:900px)').matches){reader.scrollTop=0}}
+function openReader(){renderSource();$('sourceReader').classList.add('open');$('readerShade').classList.add('open');$('readBtn').setAttribute('aria-expanded','true');$('sourceReader').scrollTop=0}
+function closeReader(){if($('sourceReader'))$('sourceReader').classList.remove('open');if($('readerShade'))$('readerShade').classList.remove('open');if($('readBtn'))$('readBtn').setAttribute('aria-expanded','false')}
+window.addEventListener('keydown',e=>{if(e.key==='Escape')closeReader()});
+
+let profile=null,task=1,bank=[],idx=0,points=0,selected=false,lastRecord=null;
+// 试用模式只在当前标签页保存，关闭标签页自动恢复正式模式。
+let trialMode=false;
+try{trialMode=sessionStorage.getItem('bcy5_teacher_trial_mode')==='1'}catch(e){}
+const teacherControlsAllowed=new URLSearchParams(window.location.search).get('teacher')==='1';
+if(!teacherControlsAllowed)trialMode=false;
+const $=id=>document.getElementById(id);
+const esc=s=>String(s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+function show(v){document.querySelectorAll('.view').forEach(x=>x.classList.remove('active'));$(v).classList.add('active');window.scrollTo({top:0,behavior:'instant'});if(v==='home'){renderLessons();displayRecords();updateTrialUI()}}
+function saveProfile(){let n=$('name').value.trim(),c=$('className').value.trim();if(!n||!c){alert('请填写姓名和班级。');return}profile={name:n,className:c,level:$('level').value};localStorage.setItem('bcy5profile',JSON.stringify(profile));$('welcome').textContent=n+' · '+profile.level+'组';show('home')}
+const OFFICIAL_KEY='bcy5results',TRIAL_KEY='bcy5trialresults';
+function readStorage(key){try{const a=JSON.parse(localStorage.getItem(key)||'[]');return Array.isArray(a)?a:[]}catch(e){return []}}
+function writeStorage(key,a){try{localStorage.setItem(key,JSON.stringify(a.slice(-160)));return true}catch(e){alert('浏览器不允许保存本机记录，请检查隐私模式或储存权限。');return false}}
+function listRecords(){return readStorage(trialMode?TRIAL_KEY:OFFICIAL_KEY)}
+function storeRecords(a){return writeStorage(trialMode?TRIAL_KEY:OFFICIAL_KEY,a)}
+function updateTrialUI(){
+ const banner=$('modeBanner'),toggle=$('trialToggle'),retry=$('retryPendingBtn');
+ if($('teacherTools'))$('teacherTools').hidden=!teacherControlsAllowed;
+ if(banner)banner.classList.toggle('hidden',!trialMode);
+ if(toggle){toggle.textContent=trialMode?'✅ 退出试用，恢复正式作业':'🧪 开启试用模式（不上传）';toggle.setAttribute('aria-pressed',String(trialMode))}
+ if(retry)retry.disabled=trialMode;
+ const stat=$('trialCount');if(stat)stat.textContent='本机试用记录：'+readStorage(TRIAL_KEY).length+'笔';
+}
+function toggleTrialMode(){
+ if(!teacherControlsAllowed)return;
+ if(!trialMode){if(!confirm('确定开启教师试用模式？试用分数只留在本机，不会上传 Google Sheets。'))return;}
+ trialMode=!trialMode;
+ try{sessionStorage.setItem('bcy5_teacher_trial_mode',trialMode?'1':'0')}catch(e){}
+ $('queueStatus').textContent=trialMode?'试用模式已开启：这期间所有答卷都不会上传。':'已恢复正式模式；正式答卷将按原设置自动上传。';
+ renderLessons();displayRecords();updateTrialUI();
+ // 不自动把试用答卷复制到正式提交队列。
+}
+function refreshRecords(){renderLessons();displayRecords();updateTrialUI();$('queueStatus').textContent='已重新读取本机记录；这个动作不会删除成绩。请使用「🗑️ 清除当前姓名的本机旧记录」。'}
+function clearTrialRecords(){
+ const count=readStorage(TRIAL_KEY).length;
+ if(!confirm('确定清空这台设备的 '+count+' 笔试用记录吗？操作不能撤回，但不会影响正式成绩或 Google Sheets。'))return;
+ try{localStorage.removeItem(TRIAL_KEY)}catch(e){alert('清除失败：浏览器不允许修改本机储存。');return}
+ if(trialMode)lastRecord=null;
+ renderLessons();displayRecords();updateTrialUI();
+ $('queueStatus').textContent='✅ 本机试用记录已清空，可以从第1堂重新测试。';
+}
+function clearOfficialLocalRecords(){
+ if(!profile){alert('请先填写当前学生姓名和班级。');return}
+ const all=readStorage(OFFICIAL_KEY);
+ const matches=all.filter(r=>r.name===profile.name&&r.className===profile.className);
+ if(!matches.length){$('queueStatus').textContent='当前姓名和班级没有本机旧记录。';return}
+ const unsent=matches.filter(r=>r.syncStatus!=='confirmed').length;
+ const warning=unsent?'\n其中 '+unsent+' 笔未获服务器收件确认（含旧版显示“已发出”的记录），删除后无法补传！':'';
+ if(!confirm('确定删除「'+profile.name+' / '+profile.className+'」在本设备的 '+matches.length+' 笔旧记录吗？'+warning+'\n此操作不会删除 Google Sheets 已接收的成绩。'))return;
+ if(unsent&&!confirm('再次确认：尚未获收件确认的 '+unsent+' 笔成绩也会从本设备永久移除。请优先核对并补传，仍要清除吗？'))return;
+ const remaining=all.filter(r=>!(r.name===profile.name&&r.className===profile.className));
+ if(!writeStorage(OFFICIAL_KEY,remaining))return;
+ if(lastRecord&&lastRecord.name===profile.name&&lastRecord.className===profile.className)lastRecord=null;
+ renderLessons();displayRecords();updateTrialUI();
+ $('queueStatus').textContent='✅ 本机旧记录已清空，可以重新答题；Google Sheets 中的记录未变。';
+}
+function renderLessons(){let rows=listRecords().filter(x=>x.name===profile.name&&x.className===profile.className);$('lessonlist').innerHTML=LESSONS.map(l=>{let r=rows.filter(a=>a.lesson===l.num).sort((a,b)=>b.score/b.total-a.score/a.total)[0];return `<button class="lesson ${r?'done':''}" onclick="startLesson(${l.num})"><h3>第${l.num}堂 · ${esc(l.title)}</h3><p>${l.target}</p><span class="status">${r?'✓ 最佳 '+r.score+'/'+r.total+'题 · '+r.level+'组':'○ 尚未完成'} · ${ALL[l.num].length}题</span></button>`}).join('')}
+
+function recordStatus(rec){
+ if(trialMode)return ['试用，不上传','trial'];
+ if(rec.syncStatus==='confirmed')return ['✅ 已确认收到','ok'];
+ if(rec.syncStatus==='error')return ['⚠️ 传送有问题','warn'];
+ if(rec.sent)return ['⚠️ 旧版仅标记已发出，未核实','warn'];
+ return ['⏳ 待确认／待发送','warn'];
+}
+function displayRecords(){
+ const rows=listRecords().filter(x=>!profile||(x.name===profile.name&&x.className===profile.className)).slice(-8).reverse();
+ $('records').innerHTML=rows.length?rows.map(a=>{
+  const info=recordStatus(a),date=esc(a.dateText||a.submitted_at||'');
+  return `<div class="record">第${Number(a.lesson)}堂 · ${Number(a.score)}/${Number(a.total)}（${esc(a.level)}组） · ${date}<div class="sync-label ${info[1]}">${info[0]}</div></div>`;
+ }).join(''):'<p class="muted">'+(trialMode?'当前没有试用记录。':'本机尚无该姓名的练习记录。')+'</p>';
+}
+
+function shuffle(a){let b=[...a];for(let i=b.length-1;i>0;i--){let j=Math.floor(Math.random()*(i+1));[b[i],b[j]]=[b[j],b[i]]}return b}
+function startLesson(n){task=n;idx=0;points=0;let source=ALL[n].map((row,i)=>({row,i}));bank=shuffle(source);sourceUnit=initialUnit(n);sourceIndex=0;closeReader();$('lessonNum').textContent='第'+n+'堂';$('lessonTitle').textContent=LESSONS[n-1].title;$('theme').textContent='难度：'+profile.level+'组｜每题只有第一次作答计分';show('quiz');drawQuestion()}
+function choiceList(q){let level=profile.level,count=level==='C'?2:level==='B'?3:4;let distractors=shuffle(q.slice(2,5));return shuffle([q[1],...distractors.slice(0,count-1)])}
+function drawQuestion(){selected=false;let obj=bank[idx],q=obj.row;setSourceUnit(unitForQuestion());$('progressLabel').textContent='第 '+(idx+1)+' / '+bank.length+' 题';$('correctLabel').textContent='目前答对：'+points+'题';$('bar').style.width=(idx/bank.length*100)+'%';$('qnum').textContent='思考后点选正确答案';$('qtext').textContent=q[0];$('hint').innerHTML=profile.level==='A'?'<b>挑战组：</b>独立思考，不显示提示。':'<b>🔎 提示：</b>'+esc(q[5])+(profile.level==='C'?'<div class="small" style="color:#668296">BM: '+esc(q[6])+'</div>':'');$('opts').innerHTML='';choiceList(q).forEach(o=>{let btn=document.createElement('button');btn.className='opt';btn.textContent=o;btn.addEventListener('click',()=>choose(o,btn));$('opts').append(btn)});$('feedback').classList.add('hidden');$('next').classList.add('hidden');$('next').textContent=idx===bank.length-1?(trialMode?'完成试用（不上传）':'完成并自动发送成绩'):'下一题 →'}
+function speakQuestion(){let q=bank[idx].row;try{speechSynthesis.cancel();let u=new SpeechSynthesisUtterance(q[0]);u.lang='zh-CN';u.rate=.83;speechSynthesis.speak(u)}catch(e){alert('当前浏览器没有可用的中文朗读语音。')}}
+function choose(option,btn){if(selected)return;selected=true;let q=bank[idx].row,good=option===q[1];if(good)points++;document.querySelectorAll('.opt').forEach(x=>{x.disabled=true;if(x.textContent===q[1])x.classList.add('good')});if(!good)btn.classList.add('bad');$('feedback').classList.remove('hidden');$('feedback').textContent=(good?'✅ 答对了！':'🔎 正确答案：'+q[1]+'。')+' '+q[5];$('correctLabel').textContent='目前答对：'+points+'题';$('next').classList.remove('hidden')}
+function nextQuestion(){if(!selected)return;if(idx+1>=bank.length){finish()}else{idx++;drawQuestion()}}
+function uuid(){return (window.crypto&&window.crypto.randomUUID)?window.crypto.randomUUID():Date.now().toString(36)+'-'+Math.random().toString(36).slice(2)}
+function finish(){let record={attempt_id:uuid(),lesson:task,lesson_title:LESSONS[task-1].title,name:profile.name,className:profile.className,level:profile.level,score:points,total:bank.length,percent:Math.round(points/bank.length*100),submitted_at:new Date().toISOString(),dateText:new Date().toLocaleString('zh-CN'),sent:false};let old=listRecords();old.push(record);storeRecords(old);lastRecord=record;$('bar').style.width='100%';$('bigscore').textContent=points+' / '+bank.length;$('scoreline').textContent='答对率：'+record.percent+'% · 难度：'+profile.level+'组';$('submitStatus').textContent=trialMode?'🧪 试用完成：成绩仅保存在本设备，不会上传教师 Google Sheets。':'📤 正在发送并向服务器核对收件情况…';show('finish');if(!trialMode)sendRecord(record)}
+function replay(){startLesson(task)}
+
+function configured(){return WEB_APP_URL.startsWith('https://script.google.com/macros/s/')&&WEB_APP_URL.endsWith('/exec')}
+const SYNC_VERSION=3;
+let syncing=false;
+function setSyncHealth(msg){const el=$('syncHealth');if(el)el.textContent=msg;}
+function updateRecord(id,patch){
+ const rows=readStorage(OFFICIAL_KEY),ix=rows.findIndex(a=>a.attempt_id===id);
+ if(ix<0)return false;
+ rows[ix]={...rows[ix],...patch};
+ if(!writeStorage(OFFICIAL_KEY,rows))return false;
+ if(lastRecord&&lastRecord.attempt_id===id)lastRecord=rows[ix];
+ displayRecords();
+ return true;
+}
+/* Apps Script 网页应用跨域请求：以 JSONP 查询单份答卷是否确实写入表格。
+   不将学生姓名或分数放在网址中，仅发送随机的 attempt_id。 */
+function receiptGet(action,id=''){
+ return new Promise((resolve,reject)=>{
+  if(!configured())return reject(new Error('未配置接收网址'));
+  const cb='BCY5Callback_'+Math.random().toString(36).slice(2)+'_'+Date.now();
+  const script=document.createElement('script');
+  let ended=false,clock;
+  function done(result,error){
+   if(ended)return;ended=true;clearTimeout(clock);delete window[cb];script.remove();
+   if(error)reject(error);else resolve(result);
+  }
+  window[cb]=o=>done(o);
+  const url=new URL(WEB_APP_URL);
+  url.searchParams.set('action',action);
+  if(id)url.searchParams.set('attempt_id',id);
+  url.searchParams.set('callback',cb);
+  url.searchParams.set('_',String(Date.now()));
+  script.src=url.toString();
+  script.onerror=()=>done(null,new Error('成绩服务器无法回传可验证回执'));
+  clock=setTimeout(()=>done(null,new Error('等待成绩服务器回执超时（可能尚未更新 Apps Script）')),11000);
+  document.head.appendChild(script);
+ });
+}
+async function checkConnection(){
+ if(trialMode){setSyncHealth('🧪 教师试用模式不向服务器传送成绩。');return false;}
+ setSyncHealth('🔎 正在检查 Google Sheets 接收程序…');
+ try{
+  const res=await receiptGet('health');
+  if(!res || !res.ok || Number(res.version)<SYNC_VERSION){
+   setSyncHealth('⚠️ 接收程序不是 v3，请将新版 Code.gs 重新部署为网页应用「新版本」。');return false;
+  }
+  setSyncHealth('✅ 接收程序 v'+res.version+' 有回应。现在交卷后仍需核对每份成绩是否入表。');return true;
+ }catch(e){
+  setSyncHealth('⚠️ 无法确认接收程序：'+e.message+'。请检查部署权限并更新 Code.gs。');return false;
+ }
+}
+async function verifyReceipt(rec,tries=2){
+ for(let t=0;t<tries;t++){
+  try{
+   const res=await receiptGet('check',rec.attempt_id);
+   if(res && res.ok && Number(res.version)>=SYNC_VERSION){
+    if(res.received){updateRecord(rec.attempt_id,{syncStatus:'confirmed',sent:true,syncError:''});return true;}
+    if(t<tries-1)await new Promise(r=>setTimeout(r,1300));
+   }else{return false}
+  }catch(e){return false}
+ }
+ return false;
+}
+async function postRecord(rec){
+ /* 不要相信 no-cors 的 HTTP 应答：即便服务器报错，浏览器也看不到状态码。 */
+ const body=new URLSearchParams();body.set('payload',JSON.stringify(rec));
+ await fetch(WEB_APP_URL,{method:'POST',mode:'no-cors',body,cache:'no-store'});
+}
+async function sendRecord(rec,{quiet=false}={}){
+ if(trialMode||!readStorage(OFFICIAL_KEY).some(x=>x.attempt_id===rec.attempt_id))return false;
+ if(!configured()){
+  updateRecord(rec.attempt_id,{syncStatus:'error',syncError:'没有填写网址'});
+  if(!quiet)$('submitStatus').textContent='⚠️ 未设置成绩收集网址。';return false;
+ }
+ if(!navigator.onLine){
+  updateRecord(rec.attempt_id,{syncStatus:'pending'});
+  if(!quiet)$('submitStatus').textContent='📴 当前没有网络，成绩暂存本机。联网后按「核对并重发」。';return false;
+ }
+ try{
+  if(!quiet)$('submitStatus').textContent='📤 已开始发送，正在核对服务器是否真正收到…';
+  updateRecord(rec.attempt_id,{syncStatus:'pending'});
+  await postRecord(rec);
+  // 表格可能在 POST 完成后才可查询，短暂重试。
+  if(await verifyReceipt(rec,3)){
+   if(!quiet)$('submitStatus').textContent='✅ Google Sheets 已确认收到这份答卷！';
+   setSyncHealth('✅ 已确认收到最新答卷。');return true;
+  }
+  updateRecord(rec.attempt_id,{syncStatus:'unverified',syncError:'未取得服务器回执'});
+  if(!quiet)$('submitStatus').textContent='⚠️ 已尝试发送，但无法确认 Google Sheets 收到。请检查接收程序版本及部署权限，并在记录区重试。';
+  setSyncHealth('⚠️ 尚未取得收件证明。需要 Google Apps Script v3 才能核实。');return false;
+ }catch(e){
+  updateRecord(rec.attempt_id,{syncStatus:'error',syncError:String(e.message||e)});
+  if(!quiet)$('submitStatus').textContent='⚠️ 发送时发生网络错误，成绩仍保留在本机。';
+  setSyncHealth('⚠️ 发送遇到网络错误：'+String(e.message||e));return false;
+ }
+}
+async function retryPending(silent=false){
+ if(trialMode){if(!silent)$('queueStatus').textContent='🧪 教师试用成绩不会上传。';return}
+ if(syncing){if(!silent)$('queueStatus').textContent='正在核对中，请勿重复点击。';return}
+ let all=readStorage(OFFICIAL_KEY).filter(x=>!profile||(x.name===profile.name&&x.className===profile.className));
+ let pending=all.filter(x=>x.syncStatus!=='confirmed');
+ if(!pending.length){if(!silent)$('queueStatus').textContent='✅ 当前身份没有待核实的本机成绩。';return}
+ if(!navigator.onLine){if(!silent)$('queueStatus').textContent='请先联网。';return}
+ syncing=true;const btn=$('retryPendingBtn');if(btn)btn.disabled=true;
+ let verified=0,resent=0;
+ try{
+  for(let i=0;i<pending.length;i++){
+   const r=pending[i];
+   if(!silent)$('queueStatus').textContent='核对第 '+(i+1)+' / '+pending.length+' 笔成绩…';
+   // 先查表；如果旧版其实收到了，就不必重新 POST。
+   if(await verifyReceipt(r,1)){verified++;continue}
+   if(await sendRecord(r,{quiet:true})){verified++;resent++}
+  }
+  if(!silent)$('queueStatus').textContent='已确认 '+verified+' / '+pending.length+' 笔；仍未确认 '+(pending.length-verified)+' 笔。请根据提示检查 Apps Script。';
+ }finally{syncing=false;if(btn)btn.disabled=false;renderLessons();displayRecords()}
+}
+window.addEventListener('online',()=>setSyncHealth('🌐 已联网；如之前提交失败，请点击「核对并重发未确认成绩」。'));
+
+try{let saved=JSON.parse(localStorage.getItem('bcy5profile')||'null');if(saved&&saved.name&&saved.className){$('name').value=saved.name;$('className').value=saved.className;$('level').value=saved.level||'B';profile=saved;$('welcome').textContent=saved.name+' · '+saved.level+'组';show('home')}}catch(e){}
+updateTrialUI();
+</script></body></html>
